@@ -54,6 +54,7 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
-  get 'posts/:id', to: 'posts#show'
-  
+  # get 'posts/:id', to: 'posts#show'
+  resources :posts, only: :show
+
 end
