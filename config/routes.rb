@@ -53,4 +53,12 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  resources :posts, only: :show
+
+  it 'shows the description on the show page in a p tag' do
+  visit "/posts/#{@post.id}"
+  expect(page).to have_css("p", text: "My post desc")
+end
+
 end
